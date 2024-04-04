@@ -50,7 +50,7 @@
   - Create a Firebase project to store your data securely (https://console.firebase.google.com/). Update the firebase.js file with your project credentials.
     
 **4.Launch Your Command Center:**
-  - Start the application with npm start (or yarn start). The app will be ready at http://localhost:3000 (default port).
+  - Start the application with **nodemon ./server.js**. The app will be ready at http://localhost:5000 (default port).
 
 ## Here's a sneak peek! ##
 ![WhatsApp Image 2024-04-04 at 19 21 10_2f036f5e](https://github.com/prateekrjt14/API_Dynamos_UVCE/assets/134294210/cc71b85d-fab6-4731-9f29-0eff05b74d0d)
