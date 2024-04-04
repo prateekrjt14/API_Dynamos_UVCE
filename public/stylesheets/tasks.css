@@ -1,0 +1,112 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(254, 252, 248);
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  .heading {
+    background-color: #1261a6; /* Blue background */
+    color: #fff; /* White text */
+    padding: 1rem 2rem;
+    text-align: center;
+    font-size:  2rem;
+    font-family: cursive; /* Change font style */
+    width: 100%;
+  }
+  
+  .tasks-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .active-tasks,
+  .missed-tasks {
+    flex: 1;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 0 1rem; /* Add space between tasks */
+    font-size: 20px;
+  }
+  
+
+  h2 {
+    margin-bottom: 1rem;
+    text-align: center;
+    background-color: #428bca; /* Blue background */
+    color: #fff; /* White text */
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    font-family: cursive;
+  }
+  
+  .task-card {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #f5f5f5; /* Light gray background */
+  }
+  
+  .task-card p {
+    margin-bottom: 0.5rem;
+  }
+  
+  .add-task-form {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  .add-task-form input,
+  .add-task-form button {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  
+  .delete-button {
+    background-color: rgb(83, 75, 75);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    text-align: right;
+    border: none;
+    cursor: pointer;
+    font-family: cursive; 
+  }
+
+  .add-task-form {
+    display: flex;
+    gap: 1rem; /* Spacing between elements */
+    margin-top: 1rem;
+}
+
+.add-task-form label {
+    display: none; 
+}
+
+.add-task-form input[type="text"],
+.add-task-form input[type="date"],
+.add-task-form button {
+    flex: 1; 
+    padding: 0.5rem; 
+}
+
+.add-task-form fieldset {
+    margin-bottom: 0.5rem;
+}
+
+.add-task-form legend {
+    font-size: 0.8em; 
+    padding: 0.2em 0.5em; 
+}

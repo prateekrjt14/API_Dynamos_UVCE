@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f5f5f5;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #2e86de; 
+    font-family: 'Arial Black', sans-serif; 
+    font-size: 36px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .input-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .input-section label {
+    font-weight: bold;
+    margin-right: 1px; 
+    color: #555;
+  }
+  
+  .input-section input[type="number"],
+  .input-section input[type="date"] {
+    padding: 8px;
+    margin-right: 3px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .input-section button {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .input-section button:hover {
+    background-color: #45a049;
+  }
+  
+  .expenses-list {
+    margin: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #383938;
+    color: white;
+  }
+  
+  tfoot td {
+    font-weight: bold;
+  }
+  
+  .delete-btn {
+    padding: 8px 16px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .delete-btn:hover {
+    background-color: #cc2b27;
+  }
+  
+  .summary-table-container {
+    margin: 40px auto;
+    max-width: 70%;
+  }
+  
+  .summary-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .summary-table th,
+  .summary-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+  }
+  
+  .summary-table th {
+    background-color: #383938;
+    color: white;
+  }
+  
+  .summary-table p {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px; 
+    color: #353231; 
+    font-family: 'Arial', sans-serif; 
+  }
+  
+  #category-select {
+    font-size: 16px;
+  }
+  
