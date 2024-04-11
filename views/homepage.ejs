@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to left, #d3d7db, #c7cfd2, #bcc7c6, #b5bfb9, #b1b5ab);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        
+        .header {
+            position: fixed; /* Fixed positioning to stay at the top */
+            top: 0; /* Align to the top of the viewport */
+            width: 100%; /* Full width */
+            text-align: center;
+            background-color: #007bff; /* Blue background color */
+            padding: 20px;
+            font-size: 23px;
+        }
+        
+        .header h1, .header h2 {
+            font-family: cursive; /* Cursive font style */
+            color: #fff; /* Text color */
+            margin: 5px 0; /* Adjusted margin */
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
+            max-width: 800px;
+            margin-top: 80px; /* Adjusted margin to create space below the header */
+        }
+        
+        .icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            font-size: 2rem;
+            color: #333;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .icon img {
+            width: 120px;
+            height: auto;
+        }
+        
+        .icon p {
+            margin-top: 10px;
+        }
+        
+        .icon:hover {
+            transform: scale(1.1);
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Welcome To UniTrack</h1>
+        <h2>Track your Activities Here</h2>
+    </header>
+    <div class="container">
+        <div class="icon" onclick="navigate('attd')">
+            <img src="/images/college.png" alt="attendance">
+            <p>Attendance</p>
+        </div>
+
+        <div class="icon" onclick="navigate('exp')">
+            <img src="/images/expenses.png" alt="expenses">
+            <p>My expenses</p>
+        </div>
+
+        <div class="icon" onclick="navigate('scr')">
+            <img src="/images/checklist.png" alt="test scores">
+            <p>My scores</p>
+        </div>
+
+        <div class="icon" onclick="navigate('ddln')">
+            <img src="/images/deadline.png" alt="deadlines">
+            <p>Deadlines</p>
+        </div>
+    </div>
+    <script src='/javascripts/homepage.js'></script>
+</body>
+</html>

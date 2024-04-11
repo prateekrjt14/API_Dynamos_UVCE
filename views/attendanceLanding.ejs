@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Attendance Tracker</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 30px;
+}
+
+.student-details {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.student-details img {
+    width: 200px; 
+    height: 200px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.student-details p {
+margin: 5px 0;
+font-family: 'Arial', sans-serif;
+font-size: 20px;
+}
+
+.card {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.card-header h3 {
+    margin: 0;
+    color: #333333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.attendance-details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: #666666;
+}
+
+.attendance-details div {
+    font-family: 'Arial', sans-serif;
+}
+
+.attendance-buttons {
+    display: flex;
+}
+
+.attendance-buttons button {
+    margin-right: 20px;
+    padding: 8px 12px;
+    background-color: #007bff;
+    font-size: 15px;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    font-family: 'Arial', sans-serif; 
+}
+
+.attendance-buttons button:hover {
+    background-color: #0056b3;
+}
+
+.delete-button {
+    margin-top: auto;
+    align-self: center;
+    padding: 8px 12px;
+    background-color: #dc3545;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    font-family: 'Arial', sans-serif;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+}
+
+.add-subject {
+margin: 20px auto;
+padding: 12px 15px;
+font-size: 20px;
+text-align: center;
+display: inline-block;
+background-color: #28a745;
+color: #ffffff;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+transition: background-color 0.3s ease-in-out;
+font-family: 'Arial', sans-serif; 
+}
+
+.add-subject:hover {
+    background-color: #218838;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Student Details</h2>
+        <div class="student-details">
+            <img src="/images/pic.jpg" alt="Profile Image">
+            <div>
+                <p id = 'uid'><strong>EmailId:</strong><%= userId %></p> 
+            </div>
+        </div>
+
+        <h2>Attendance Details</h2>
+        <div class="attendance">
+            <% if (subjects.length > 0) { %>
+                <% subjects.forEach(subject => { %>
+                    <div class="card">
+                        <div class="card-header">
+                            <h3><%= subject.courseName %></h3>
+                            <div class="attendance-buttons">
+                                <!-- attendanceLanding.ejs -->
+                                <button class="plus" title="Attended" onclick="increaseAttendance('<%= subject.subjectId %>', '<%= subject.userId %>')">Attended</button> 
+                                <button class="minus" title="Not Attended" onclick="increaseTotalClasses('<%= subject.subjectId %>', '<%= subject.userId %>')">Not Attended</button>
+                            </div>
+                            
+                        </div>
+                        <div class="attendance-details">
+                            <div><strong>Percentage:</strong> <%= subject.percentage %> %</div>
+                            <div><strong>Classes Attended:</strong> <%= subject.classesAttended %></div>
+                            <div><strong>Total Classes:</strong> <%= subject.totalClasses %></div>
+                        </div>
+                        <button class="delete-button" onclick="deleteSubject('<%= subject.subjectId %>', '<%= subject.userId %>')">Delete Subject</button>
+                    </div>
+                <% }); %>
+            <% } else { %>
+                <p>No subjects found for attendance.</p>
+            <% } %>
+        </div>
+        
+        
+
+        <button class="add-subject" onclick="addSubject()">Add Subject</button>
+    </div>
+
+    <script src="/javascripts/attendanceLanding.js"></script>
+</body>
+</html>

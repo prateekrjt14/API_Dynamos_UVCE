@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Test Score Management System</title>
+    <link rel="stylesheet" href="/stylesheets/marks.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Student Test Score Management System</h1>
+        <form id="scoreForm" action="/marks/add" method="POST">
+            <label for="subjectCode">Subject Code:</label>
+            <input type="text" id="subjectCode" name="subjectCode" required>
+            <label for="subjectName">Subject:</label>
+            <input type="text" id="subjectName" name="subjectName" required>
+            <label for="testType">Test type:</label>
+            <select name="testType" id="testType">
+                <option value="internal1" selected>Internal1</option>
+                <option value="event1">Event1</option>
+                <option value="internal2">Internal2</option>
+                <option value="event2">Event2</option>
+                <option value="internal3">Internal3</option>
+            </select>
+            <br>
+            <label for="marks">Marks:</label>
+            <input type="number" id="marks" name="marks" placeholder="Enter your marks" required>
+            <input type="submit" value="Submit" id="submit">
+        </form>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Subject Code</th>
+                    <th>Subject</th>
+                    <th>Test Type</th>
+                    <th>Test Score</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody id="scoreTable">
+                <!-- Display marks records dynamically -->
+                <% marks.forEach(mark => { %>
+                    <tr>
+                        <td><%= mark.subjectCode %></td>
+                        <td><%= mark.subjectName %></td>
+                        <td><%= mark.testType %></td>
+                        <td><%= mark.marks %></td>
+                        <td>
+                            <!-- Button to delete the corresponding row -->
+                            <button class="del" onclick="deleteMarksRecord('<%= mark.id %>')">Delete</button>
+                        </td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+    <script src="/javascripts/marks.js"></script>
+</body>
+</html>
